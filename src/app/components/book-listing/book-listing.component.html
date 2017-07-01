@@ -1,0 +1,6 @@
+<ul class="list-group">
+    <li class="list-group-item"
+        ng-repeat="book in $ctrl.books | orderBy : 'price' ">
+        <book book="book"></book>
+    </li>
+</ul>

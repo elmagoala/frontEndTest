@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Registrar Nuevo Libro</div>
+    <div class="panel-body">
+
+        <form class="row" name="bookForm" ng-submit="bookForm.$valid && $ctrl.createBook()" novalidate>
+            <div class="form-group col-xs-12">
+                <label for="">Title</label>
+                <input type="text" ng-model="$ctrl.book.title" class="form-control" required>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="">Author</label>
+                <input type="text" ng-model="$ctrl.book.author" class="form-control" required>
+            </div>
+            <div class="form-group col-xs-6">
+                <label for="">Price</label>
+                <input type="number" ng-model="$ctrl.book.price" class="form-control" required>
+            </div>
+            <div class="form-group col-xs-6">
+                <label for="">Published Date</label>
+                <input type="date" ng-model="$ctrl.book.publishedDate" class="form-control" required>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="">Description</label>
+                <textarea class="form-control" ng-model="$ctrl.book.description"></textarea>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="">Image</label>
+                <input type="text" ng-model="$ctrl.book.image" class="form-control" required>
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="#!/Books" class="btn btn-default">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

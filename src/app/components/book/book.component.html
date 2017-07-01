@@ -1,0 +1,17 @@
+<div class="row">
+    <img ng-src="images/{{$ctrl.book.image}}" class="col-xs-4"/>
+    <section class="col-xs-8">
+        <h2>
+            {{$ctrl.book.title}}
+            <em>{{$ctrl.book.price | currency : 'USD$' : 2}}</em>
+        </h2>
+        <h4>{{$ctrl.book.author | uppercase}}</h4>
+        <div>{{$ctrl.book.publishedDate | date : 'MM-yyyy'}}</div>
+        <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            Comprar
+        </button>
+        <hr />
+        <book-detail book="$ctrl.book"></book-detail>
+    </section>
+</div>

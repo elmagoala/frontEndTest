@@ -1,0 +1,9 @@
+<tab-container>
+    <tab title="'Descripción'">
+        {{$ctrl.book.description}}
+    </tab>
+    <tab title="'Comentarios'" badge="$ctrl.book.comments.length">
+        <comment-listing comments="$ctrl.book.comments"></comment-listing>
+        <comment-form book="$ctrl.book"></comment-form>
+    </tab>
+</tab-container>

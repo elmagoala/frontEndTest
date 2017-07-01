@@ -1,0 +1,11 @@
+<div>
+    <ul class="nav nav-tabs">
+        <li ng-repeat="tab in $ctrl.tabs">
+            <a ng-click="$ctrl.selectTab(this)">{{tab.title}}</a>
+            <span class="badge">{{$tab.badge}}</span>
+        </li>
+    </ul>
+    <div ng-transclude>
+
+    </div>
+</div>

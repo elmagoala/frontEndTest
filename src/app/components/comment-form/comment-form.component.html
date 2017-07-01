@@ -1,0 +1,43 @@
+<form ng-submit="$ctrl.addComment(commentForm)" name="commentForm" novalidate>
+
+    <div class="form-group">
+        <label>Clasificación</label>
+        <select name="stars" class="form-control" ng-model="$ctrl.comment.stars" required>
+                                            <option value="1">1 estrellas</option>
+                                            <option value="2">2 estrellas</option>
+                                            <option value="3">3 estrellas</option>
+                                            <option value="4">4 estrellas</option>
+                                            <option value="5">5 estrellas</option>
+                                        </select>
+        <div ng-messages="commentForm.stars.$error" class="abs-error">
+            <div ng-message="required">
+                Calificación requerida
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Comentario</label>
+        <textarea name="text" class="form-control" ng-model="$ctrl.comment.text" required></textarea>
+        <div ng-messages="commentForm.text.$error" class="abs-error" ng-show="commentForm.$submitted || commentForm.text.$invalid">
+            <div ng-message="required">
+                Comentario requerido
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input name="email" type="email" class="form-control" ng-model="$ctrl.comment.email" required>
+        <div ng-messages="commentForm.email.$error" class="abs-error" ng-show="commentForm.$submitted || commentForm.email.$invalid">
+            <div ng-message="required">
+                Email requerido
+            </div>
+            <div ng-message="email">
+                Email incorrecto
+            </div>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-success pull-right" value="Enviar">
+    <!--<pre>
+        {{commentForm|json}}
+    </pre>-->
+</form>
