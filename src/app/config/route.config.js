@@ -14,6 +14,9 @@ function routeConfig($routeProvider) {
         .when('/Book/:bookId', {
             template: '<admin-book></admin-book>'
         })
+        .when('/SingUp', {
+            template: '<sing-up></sing-up>'
+        })
         .otherwise({
             redirectTo: '/Home'
         });

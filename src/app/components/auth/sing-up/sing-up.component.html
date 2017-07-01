@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Registrar Usuario</div>
+    <div class="panel-body">
+        <form class="row" name="singUpForm" ng-submit="singUpForm.$valid && $ctrl.createUser()" novalidate>
+            <div class="form-group col-xs-12">
+                <label for="">Email</label>
+                <input type="text" ng-model="$ctrl.user.title" class="form-control" required>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="">Password</label>
+                <input type="password" ng-model="$ctrl.user.author" class="form-control" required>
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+                <a href="#!/Home" class="btn btn-default">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

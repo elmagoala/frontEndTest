@@ -17,6 +17,7 @@ var tab = require('./components/ui/tab/tab.component');
 var navbar = require('./components/navbar/navbar.component');
 var adminBooks = require('./components/admin/admin-books.component');
 var adminBook = require('./components/admin/admin-book.component');
+var singUp = require('./components/auth/sing-up/sing-up.component');
 
 
 var app = angular.module('app', [angularMessage, angularRoute]);
@@ -32,3 +33,4 @@ app.component('tab', tab);
 app.component('navbar', navbar);
 app.component('adminBooks', adminBooks);
 app.component('adminBook', adminBook);
+app.component('singUp', singUp);
