@@ -1,7 +1,10 @@
 var template = require('./sing-up.component.html');
 
-function SingUpController(params) {
+function SingUpController() {
 
+    this.createUser = function() {
+
+    }
 }
 
 module.exports = {

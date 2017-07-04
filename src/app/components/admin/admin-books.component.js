@@ -1,38 +1,28 @@
 var template = require('./admin-books.component.html');
-var URL = 'https://lit-citadel-36705.herokuapp.com/api/Books';
 
-AdminBooksController.$inject = ['$http', '$location', '$routeParams']
+AdminBooksController.$inject = ['bookService']
 
-function AdminBooksController($http, $location, $routeParams) {
-    var ctrl = this;
-    var bookId = $routeParams.bookId;
-    ctrl.books = [];
+function AdminBooksController(bookService) {
+    var self = this;
 
-    function init() {
-        var req = $http.get(URL);
-        req.then(function(res) {
-            ctrl.books = res.data;
-        });
+    function setToBooks(books) {
+        self.books = books;
     }
 
-    this.updateBook = function() {
-        var req = $http.put(URL + '/' + bookId, this.book);
-        req.then(function(res) {
-            $location.url('/Books');
-        });
-        req.catch(function(error) {
-            console.log(error);
-        });
-    };
+    function handleError(error) {
+        console.log(error);
+    }
+
+    function init() {
+        var req = bookService.getBooks();
+        req.then(setToBooks);
+        req.catch(handleError);
+    }
 
     this.deleteBook = function(bookId) {
-        var req = $http.delete(URL + '/' + bookId);
-        req.then(function(res) {
-            init();
-        });
-        req.catch(function(error) {
-            console.log(error);
-        });
+        var req = bookService.deleteBook(bookId);
+        req.then(init);
+        req.catch(handleError);
     };
 
     init();

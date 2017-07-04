@@ -18,6 +18,9 @@ var navbar = require('./components/navbar/navbar.component');
 var adminBooks = require('./components/admin/admin-books.component');
 var adminBook = require('./components/admin/admin-book.component');
 var singUp = require('./components/auth/sing-up/sing-up.component');
+var singIn = require('./components/auth/sing-in/sing-in.component');
+
+var bookService = require('./services/BookService');
 
 
 var app = angular.module('app', [angularMessage, angularRoute]);
@@ -34,3 +37,6 @@ app.component('navbar', navbar);
 app.component('adminBooks', adminBooks);
 app.component('adminBook', adminBook);
 app.component('singUp', singUp);
+app.component('singIn', singIn);
+
+app.service('bookService', bookService);

@@ -17,6 +17,9 @@ function routeConfig($routeProvider) {
         .when('/SingUp', {
             template: '<sing-up></sing-up>'
         })
+        .when('/SingIn', {
+            template: '<sing-in></sing-in>'
+        })
         .otherwise({
             redirectTo: '/Home'
         });
